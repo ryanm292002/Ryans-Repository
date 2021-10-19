@@ -13,6 +13,5 @@ $readLog = Read-Host -Prompt "Please select a log to review from the list above"
 $searchLog = Read-Host -Prompt "Please specify a keyword or phrase from the message"
 
 # Print the results for the log 
-Get-Eventlog -LogName $readLog -Newest 40 | where{$_.Message -ilike "*$searchLog*"}
- #|  export-csv -NoTypeInformation `
-#-Path "$myDir\securitylog.csv"
+Get-Eventlog -LogName $readLog -Newest 40 | where{$_.Message -ilike "*$searchLog*"}|  export-csv -NoTypeInformation `
+-Path "$myDir\securitylog.csv"
