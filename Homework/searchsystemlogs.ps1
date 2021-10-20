@@ -1,4 +1,6 @@
-﻿#Storyline: Reviewing the Security Event Log
+﻿#Storyline: USing the script of searching through the security log our task
+ #was to add a prompt that asked a user to search for a specific keyword/phrase
+ #from the security log that they needed to focus on
 
 # Directory to save files
 $myDir ="C:\Users\ryan.morrissey-adm\Desktop"
