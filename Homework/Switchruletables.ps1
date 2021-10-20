@@ -75,7 +75,7 @@ foreach ($u in $drop_urls) {
    #syntax = access-list 1 deny host 192.168.10.1
 
         'Cisco Deny'        { (Get-Content -Path ".\ips-bad.tmp") | % `
-   {$_ -replace "^", "access-list 1 deny host 192.168.10.1"} | `
+   {$_ -replace "^", "access-list 1 deny host"} | `
    Out-File -FilePath "ciscodeny.bash" }
 
 #windows ruleset
