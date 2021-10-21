@@ -82,7 +82,7 @@ foreach ($u in $drop_urls) {
 #syntax = netsh advfirewall firewall add rule name="IP Block" dir=in interface=any action=block remoteip=<IP_Address>/32
 
         'Windows Firewall' { (Get-Content -Path ".\ips-bad.tmp") | % `
-   {$_ -replace "^", "netsh advfirewall firewall add rule name = 'IP Block' dir=in interface=any action=block "} | `
+   {$_ -replace "^", "netsh advfirewall firewall add rule name = 'IP Block' dir=in interface=any action=block remoteip= "} | `
    Out-File -FilePath "windows.bash" remoteip= }
     }
  
