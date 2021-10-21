@@ -83,7 +83,7 @@ foreach ($u in $drop_urls) {
 
         'Windows Firewall' { (Get-Content -Path ".\ips-bad.tmp") | % `
    {$_ -replace "^", "netsh advfirewall firewall add rule name = 'IP Block' dir=in interface=any action=block remoteip= "} | `
-   Out-File -FilePath "windows.bash" remoteip= }
+   Out-File -FilePath "windows.bash" }
     }
  
    
