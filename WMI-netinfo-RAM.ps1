@@ -11,5 +11,5 @@
  #(Gave class list for network adapter config, looked for required classes)
 #Get-WmiObject -Class Win32_NetworkAdapterConfiguration | Get-Member -MemberType Property 
 
-#choose specifically what properties you want to look at of the adapter configuration.
+#Choose specifically what properties you want to look at of the adapter configuration from the code above
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration | select IPAddress, DefaultIPGateway, DHCPServer, DNSServerSearchorder 
