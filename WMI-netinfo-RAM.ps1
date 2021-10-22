@@ -1,5 +1,5 @@
 # STORY LINE:
-# These are some examples of how Get-WmiObject can be useful for you powershell system, you can use it to find information such as
+# These are some examples of how Get-WmiObject can be useful when using powershell, you can use it to find information such as
 # properties of your network adapter
 
 #Code to find out which Class to use, looking for network info so sorted by n
