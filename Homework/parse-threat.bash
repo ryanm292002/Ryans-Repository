@@ -10,10 +10,10 @@ egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' /tmp/access.log | sort
 
 for eachIP in $(cat badIPs.txt)
 do
-	echo "block in from ${eachIP} to any" | tee -a pf.conf
+	#echo "block in from ${eachIP} to any" | tee -a pf.conf
 
         echo "iptables -A INPUT -s ${eachIP} -j DROP" | tee -a badIPS.iptables
 done
-~
-~
+
+
 
