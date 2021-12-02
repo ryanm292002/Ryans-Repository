@@ -5,7 +5,11 @@
 
 #wget  https://nowire.champlain.edu/sys320-file/access.log -O /tmp/access.log
 
-egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' /tmp/access.log | sort -u | tee badIPs.txt
+egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' /tmp/access.log | sort -u | tee badIPs.txt |\
+awk ' BEGIN { format = "%-15s %-20s %-7s %-6s %-10s %s\n"
+       printf format,  "IP", "Date", "Method", "Status", "Size", "URI"
+       printf format,  "--", "----", "------", "------", "----", "------"  }
+    { printf  format, $1, $4, $6, $9, $10, $7 }'
 
 
 for eachIP in $(cat badIPs.txt)
